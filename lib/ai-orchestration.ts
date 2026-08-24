@@ -107,7 +107,7 @@ async function answerAgent(question: string, matches: ReturnType<typeof verifica
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
-        model: "gemini-3.7-flash",
+        model: "gemini-3.5-flash-lite",
         system_instruction: "You are the answer agent in a portfolio RAG pipeline. Answer only from approved evidence. Be concise, attribute team contributions precisely, and never invent ownership, metrics, or experience.",
         input: `Question: ${question}\n\nApproved evidence:\n${context}`,
         generation_config: { max_output_tokens: 260 }
@@ -135,7 +135,7 @@ export async function runPortfolioAgents(question: string, apiKey?: string) {
       { agent: "Planner agent", detail: `Mapped intent: ${plan.intent}`, status: "complete" as const },
       { agent: "Retrieval agent", detail: `Ranked ${evidence.length} evidence records with ${retrieval.provider}`, status: semantic ? "complete" as const : "fallback" as const },
       { agent: "Verification agent", detail: `Approved ${approved.length} source-grounded records`, status: "complete" as const },
-      { agent: "Answer agent", detail: output.generated ? "Generated from the approved context only" : "Returned extractive evidence while Gemini is not configured", status: output.generated ? "complete" as const : "fallback" as const }
+      { agent: "Answer agent", detail: output.generated ? "Generated from the approved context only" : "Returned extractive evidence because generation was unavailable", status: output.generated ? "complete" as const : "fallback" as const }
     ]
   };
 }

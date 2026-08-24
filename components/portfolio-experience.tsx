@@ -91,7 +91,7 @@ export function PortfolioExperience() {
             </div>
             <EvidenceAssistant />
           </div>
-          <div className="honesty-note reveal"><span>Current live mode</span><p>Until a Gemini API key is configured, the demo performs local vector retrieval and returns the approved evidence directly. The interface always shows which mode actually ran.</p></div>
+          <div className="honesty-note reveal"><span>Current live mode</span><p>The assistant uses Gemini embeddings and grounded generation when available, with a transparent local retrieval fallback. The execution trace always shows which mode actually ran.</p></div>
         </section>
 
         <section id="work" className="section-shell section-block work-section">
