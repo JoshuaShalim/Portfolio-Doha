@@ -26,9 +26,9 @@ export function EvidenceAssistant() {
 
   return (
     <div className="lab-console reveal delay-1">
-      <div className="lab-console-head"><div><span /><span /><span /></div><b>ContextForge / live</b><i>● online</i></div>
+      <div className="lab-console-head"><div><span /><span /><span /></div><b>Portfolio AI Assistant / live</b><i>● online</i></div>
       <div className="lab-console-body">
-        {!result && !loading && <div className="lab-intro"><span>✦</span><h3>Query the evidence base</h3><p>The pipeline will expose each retrieval and verification stage.</p></div>}
+        {!result && !loading && <div className="lab-intro"><span>✦</span><h3>Ask about my work</h3><p>The assistant searches verified portfolio evidence and shows every step it used.</p></div>}
         {loading && <div className="lab-running"><span /><span /><span /><p>Orchestrating agents…</p></div>}
         {error ? <p className="lab-error">{error}</p> : null}
         {result ? <div className="lab-result">
@@ -39,7 +39,7 @@ export function EvidenceAssistant() {
         </div> : null}
       </div>
       <div className="query-suggestions">{suggestions.map((item) => <button key={item} onClick={() => setQuestion(item)}>{item}</button>)}</div>
-      <form className="lab-form" onSubmit={ask}><label htmlFor="lab-question">Ask about Joshua&apos;s verified work</label><input id="lab-question" value={question} onChange={(event) => setQuestion(event.target.value)} maxLength={500} /><button disabled={loading || !question.trim()} aria-label="Run ContextForge pipeline">↑</button></form>
+      <form className="lab-form" onSubmit={ask}><label htmlFor="lab-question">Ask about Joshua&apos;s verified work</label><input id="lab-question" value={question} onChange={(event) => setQuestion(event.target.value)} maxLength={500} /><button disabled={loading || !question.trim()} aria-label="Run portfolio AI assistant">↑</button></form>
     </div>
   );
 }

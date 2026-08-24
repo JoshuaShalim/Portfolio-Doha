@@ -10,6 +10,17 @@ const navItems = [["about", "About"], ["ai-lab", "AI Lab"], ["work", "Work"], ["
 
 export function PortfolioExperience() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText("joshuashalim15@gmail.com");
+      setEmailCopied(true);
+      window.setTimeout(() => setEmailCopied(false), 1800);
+    } catch {
+      window.location.href = "mailto:joshuashalim15@gmail.com";
+    }
+  }
 
   useEffect(() => {
     const nodes = document.querySelectorAll<HTMLElement>(".reveal");
@@ -28,11 +39,11 @@ export function PortfolioExperience() {
   return (
     <>
       <header className="site-header">
-        <a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b><em>Dev</em></a>
+        <a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a>
         <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">
           {navItems.map(([href, label]) => <a key={href} href={`#${href}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
         </nav>
-        <a className="header-cta" href="mailto:joshuashalim15@gmail.com">Let&apos;s talk <span>↗</span></a>
+        <a className="header-cta" href="#contact">Let&apos;s talk <span>↓</span></a>
         <button className="menu-button" onClick={() => setMenuOpen((value) => !value)} aria-expanded={menuOpen} aria-label="Toggle navigation"><span /><span /></button>
       </header>
 
@@ -59,28 +70,28 @@ export function PortfolioExperience() {
         </section>
 
         <section id="ai-lab" className="section-shell section-block ai-lab-section">
-          <div className="section-label reveal">AI / LLM Case Study</div>
+          <div className="section-label reveal">AI Engineering Project</div>
           <div className="section-heading reveal">
-            <h2>ContextForge.<br /><span>A RAG & orchestration lab.</span></h2>
-            <p>Built directly into this portfolio to turn AI interest into inspectable engineering evidence: semantic retrieval, context augmentation, controlled generation, citations, and a visible multi-stage execution trace.</p>
+            <h2>Portfolio AI Assistant.<br /><span>A practical RAG demonstration.</span></h2>
+            <p>Recruiters can ask questions about my work. The system first finds the most relevant verified project records, checks the evidence, and then produces a grounded answer with source links.</p>
           </div>
           <div className="lab-grid">
             <div className="lab-case reveal">
-              <div className="case-top"><span>Live engineering case</span><i>System 01</i></div>
-              <h3>Ask a question.<br />Watch the pipeline work.</h3>
-              <p>The assistant searches a curated knowledge base of verified project evidence before answering. When Gemini is configured, model embeddings perform semantic retrieval and the retrieved evidence augments the LLM prompt.</p>
+              <div className="case-top"><span>Live portfolio project</span><i>AI system 01</i></div>
+              <h3>What does it do?</h3>
+              <p>Instead of letting an AI invent an answer, this assistant searches a small knowledge base containing my verified projects and experience. Only the relevant records are supplied as context for the final answer.</p>
               <ul>
-                <li><b>Planner agent</b><span>Maps intent and defines the retrieval objective.</span></li>
-                <li><b>Retrieval agent</b><span>Embeds the query, ranks evidence with cosine similarity.</span></li>
-                <li><b>Verification agent</b><span>Rejects unsupported context and preserves source links.</span></li>
-                <li><b>Answer agent</b><span>Generates only from the approved evidence package.</span></li>
+                <li><b>1. Understand</b><span>Identifies whether the question concerns AI, backend, mobile, or general experience.</span></li>
+                <li><b>2. Retrieve</b><span>Converts the question into a vector and ranks the closest evidence.</span></li>
+                <li><b>3. Verify</b><span>Keeps supported records and preserves their source links.</span></li>
+                <li><b>4. Answer</b><span>Uses only the approved context rather than unsupported assumptions.</span></li>
               </ul>
               <div className="lab-tags"><span>Gemini API</span><span>Embeddings</span><span>Vector retrieval</span><span>RAG</span><span>Agent orchestration</span><span>Next.js</span></div>
               <a className="source-link" href="https://github.com/JoshuaShalim/Portfolio-Doha/tree/main/app/api/assistant" target="_blank" rel="noreferrer">Inspect the source code ↗</a>
             </div>
             <EvidenceAssistant />
           </div>
-          <div className="honesty-note reveal"><span>Engineering boundary</span><p>The live UI always reports whether it used Gemini embeddings and generation or the local vector fallback. This project demonstrates the complete architecture without pretending an unavailable provider call occurred.</p></div>
+          <div className="honesty-note reveal"><span>Current live mode</span><p>Until a Gemini API key is configured, the demo performs local vector retrieval and returns the approved evidence directly. The interface always shows which mode actually ran.</p></div>
         </section>
 
         <section id="work" className="section-shell section-block work-section">
@@ -112,11 +123,17 @@ export function PortfolioExperience() {
         <section id="contact" className="section-shell section-block contact-section">
           <div className="contact-card reveal">
             <div><span className="section-label">Contact</span><h2>Let&apos;s build something<br /><em>useful and reliable.</em></h2><p>Based in Doha with a valid QID. Available after a 30-day notice period.</p></div>
-            <div className="contact-actions"><a className="button button-primary" href="mailto:joshuashalim15@gmail.com">Email Joshua <span>↗</span></a><a href="https://www.linkedin.com/in/joshua-shalim/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/JoshuaShalim" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+            <div className="contact-actions">
+              <span className="contact-email">joshuashalim15@gmail.com</span>
+              <button className="button button-primary" onClick={copyEmail}>{emailCopied ? "Email copied ✓" : "Copy email"}</button>
+              <a href="mailto:joshuashalim15@gmail.com">Open email app ↗</a>
+              <a href="https://wa.me/97466757040" target="_blank" rel="noreferrer">WhatsApp ↗</a>
+              <a href="https://www.linkedin.com/in/joshua-shalim/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/JoshuaShalim" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
           </div>
         </section>
       </main>
-      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b><em>Dev</em></a><p>Full-stack · Mobile · AI-assisted engineering</p><p>© 2026 Joshua Shalim</p></footer>
+      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a><p>Full-stack · Mobile · AI-assisted engineering</p><p>© 2026 Joshua Shalim</p></footer>
     </>
   );
 }

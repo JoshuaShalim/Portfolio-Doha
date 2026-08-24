@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import "./readability.css";
 
 const sans = Space_Grotesk({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
