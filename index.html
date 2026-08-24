@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joshua Shalim — Software Developer</title>
+<title>Joshua Shalim — Full-Stack Web &amp; Mobile Developer in Doha</title>
+<meta name="description" content="Joshua Shalim is a Doha-based full-stack developer building React, Next.js, Node.js, React Native, Shopify automation, and AI-assisted software products.">
+<meta property="og:title" content="Joshua Shalim — Full-Stack Developer">
+<meta property="og:description" content="Web, mobile, backend automation, and AI-assisted engineering projects built in Doha, Qatar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joshuashalimportfolio.vercel.app/">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -355,6 +360,7 @@
   }
   .proj-desc { color: var(--muted); font-size: .88rem; line-height: 1.7; font-weight: 300; flex: 1; margin-bottom: 1.5rem; }
   .proj-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .proj-links { display: flex; align-items: center; gap: .85rem; flex-wrap: wrap; }
   .proj-tags { display: flex; gap: .4rem; flex-wrap: wrap; }
   .proj-tag {
     font-size: .72rem; padding: .22rem .65rem;
@@ -503,6 +509,10 @@
     transition: opacity .6s ease, transform .6s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-up { opacity: 1; transform: none; transition: none; }
+  }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 900px) {
@@ -538,7 +548,6 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#freelance">Freelance</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="mailto:joshuashalim15@gmail.com" class="nav-cta">Hire Me</a>
@@ -553,7 +562,6 @@
   <a href="#experience" class="mm-link">Experience</a>
   <a href="#projects" class="mm-link">Projects</a>
   <a href="#freelance" class="mm-link">Freelance</a>
-  <a href="#services" class="mm-link">Services</a>
   <a href="#contact" class="mm-link">Contact</a>
 </div>
 
@@ -569,12 +577,12 @@
         Available for opportunities in Qatar
       </div>
       <h1 class="hero-title">
-        Building Modern
-        <span class="line2">Digital Experiences</span>
+        Building Full-Stack
+        <span class="line2">Products That Work</span>
       </h1>
       <p class="hero-subtitle">
-        Software Developer specializing in React.js, Next.js, and TypeScript. 
-        I craft scalable, high-performance web & mobile applications with clean code and exceptional UX.
+        Full-Stack Developer building web, mobile, backend automation, and AI-assisted product workflows
+        with React, Next.js, TypeScript, Node.js, React Native, and production APIs.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">
@@ -599,7 +607,7 @@
     <div class="hero-card fade-up">
       <div class="hero-avatar">JS</div>
       <h3>Joshua Shalim</h3>
-      <p class="role">Software Developer · Doha, Qatar 🇶🇦</p>
+      <p class="role">Full-Stack Developer · Doha, Qatar 🇶🇦</p>
       <div class="hero-stats">
         <div class="stat-box">
           <div class="num">4<span style="color:var(--accent);font-size:1.1rem">+</span></div>
@@ -622,7 +630,7 @@
         <span class="pill accent">React.js</span>
         <span class="pill accent">Next.js</span>
         <span class="pill accent">TypeScript</span>
-        <span class="pill">Python</span>
+        <span class="pill">Node.js</span>
         <span class="pill">React Native</span>
         <span class="pill">TailwindCSS</span>
       </div>
@@ -637,9 +645,9 @@
     <h2 class="section-title">Passionate about crafting<br>exceptional software</h2>
     <div class="about-grid">
       <div class="about-text fade-up">
-        <p>I'm a <strong>Software Developer</strong> based in Doha, Qatar, with 4+ years of experience building scalable web and mobile applications. My journey started with a deep curiosity about how software shapes user experiences — that curiosity evolved into a career I love.</p>
-        <p>I specialize in the modern JavaScript ecosystem — <strong>React.js, Next.js, TypeScript</strong> — and bring a strong eye for design and performance. At Shispare, I improved app load performance by <strong>80%</strong> through targeted optimization. I thrive in Agile teams and love shipping products that make a real difference.</p>
-        <p>When I'm not coding, I'm exploring AI integrations, experimenting with computer vision, and building side projects that solve real problems.</p>
+        <p>I'm a <strong>Full-Stack Developer</strong> based in Doha, Qatar, with 4+ years of experience across web, mobile, APIs, databases, e-commerce automation, and production support.</p>
+        <p>I work across the modern JavaScript ecosystem — <strong>React, Next.js, TypeScript, Node.js, and React Native</strong> — with PostgreSQL, MySQL, MongoDB, REST APIs, Shopify, and Linux VPS deployments. At Shispare, I contributed to an approximately <strong>80% improvement in application load performance</strong>.</p>
+        <p>Since 2024, I have used Cursor, GitHub Copilot, Kilo Code, and ChatGPT as supervised engineering tools for planning, UI implementation, API integration, debugging, testing, and documentation. I create project-specific context documentation so AI-assisted changes receive the relevant architecture, files, constraints, and acceptance criteria.</p>
         <div class="metrics">
           <div class="metric">
             <div class="num">4<span>+</span></div>
@@ -671,10 +679,17 @@
           </div>
           <h4>Tools & Infrastructure</h4>
           <div class="skill-row">
-            <span class="sk">Git / GitHub</span><span class="sk">AWS</span>
+            <span class="sk">Git / GitHub</span><span class="sk">Linux VPS / SSH</span>
             <span class="sk">PostgreSQL</span><span class="sk">MySQL</span>
-            <span class="sk">REST APIs</span><span class="sk">CI/CD</span>
+            <span class="sk">MongoDB</span><span class="sk">REST APIs</span>
+            <span class="sk">Vercel Deployments</span><span class="sk">PM2</span>
             <span class="sk">Figma</span><span class="sk">Agile/Scrum</span>
+          </div>
+          <h4>AI-Assisted Engineering</h4>
+          <div class="skill-row">
+            <span class="sk">Cursor Agent</span><span class="sk">GitHub Copilot</span>
+            <span class="sk">Prompt Engineering</span><span class="sk">Context Engineering</span>
+            <span class="sk">AI-Supervised Debugging</span><span class="sk">Computer Vision</span>
           </div>
         </div>
       </div>
@@ -796,72 +811,90 @@
 
     <div class="projects-grid">
       <div class="proj-card fade-up">
-        <div class="proj-icon">🤖</div>
-        <div class="proj-title">Drone Detection System</div>
-        <p class="proj-desc">Real-time drone and tank detection using YOLO and Python Computer Vision, developed for an internship at Heavy Industries Taxila, Pakistan Govt. Identifies and tracks objects with high accuracy in live video feeds.</p>
+        <div class="proj-icon">🏢</div>
+        <div class="proj-title">HRSG Online</div>
+        <p class="proj-desc">Contributed frontend screens and REST API integrations for an HR platform backed by PostgreSQL. Used Cursor Agent with project-specific context documentation to guide implementation, debugging, and future changes.</p>
         <div class="proj-footer">
           <div class="proj-tags">
-            <span class="proj-tag">Python</span><span class="proj-tag">YOLO</span><span class="proj-tag">OpenCV</span>
+            <span class="proj-tag">React</span><span class="proj-tag">Next.js</span><span class="proj-tag">TypeScript</span><span class="proj-tag">PostgreSQL</span>
           </div>
-          <a href="https://github.com/JoshuaShalim/Real_Time_Drone-Tank_Detection_System_Using_Python_yolov5" target="_blank" rel="noopener" class="proj-link">
-            GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          <a href="https://hrsgonline.com/" target="_blank" rel="noopener" class="proj-link">Live site ↗</a>
         </div>
       </div>
 
       <div class="proj-card fade-up" style="transition-delay:.08s">
         <div class="proj-icon">💸</div>
-        <div class="proj-title">Expense Tracker</div>
-        <p class="proj-desc">Full-stack MERN application for personal finance management. Features real-time budget tracking, category breakdowns, and visual spending insights.</p>
+        <div class="proj-title">Flow Finance — MERN Expense Tracker</div>
+        <p class="proj-desc">Full-stack finance application with JWT authentication, income and expense management, dashboard charts, recent transactions, category suggestions, profile image uploads, and Excel exports.</p>
         <div class="proj-footer">
           <div class="proj-tags">
-            <span class="proj-tag">MongoDB</span><span class="proj-tag">Express</span><span class="proj-tag">React</span><span class="proj-tag">Node</span>
+            <span class="proj-tag">MongoDB</span><span class="proj-tag">Express</span><span class="proj-tag">React</span><span class="proj-tag">Node.js</span>
           </div>
-          <a href="https://github.com/JoshuaShalim/expense-tracker" target="_blank" rel="noopener" class="proj-link">
-            GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          <div class="proj-links">
+            <a href="https://myflowfinance.vercel.app/" target="_blank" rel="noopener" class="proj-link">Live app ↗</a>
+            <a href="https://github.com/JoshuaShalim/expense-tracker" target="_blank" rel="noopener" class="proj-link">Frontend ↗</a>
+            <a href="https://github.com/JoshuaShalim/expense-tracker-backend" target="_blank" rel="noopener" class="proj-link">API ↗</a>
+          </div>
         </div>
       </div>
 
       <div class="proj-card fade-up" style="transition-delay:.16s">
-        <div class="proj-icon">✝️</div>
-        <div class="proj-title">Daily Devotion</div>
-        <p class="proj-desc">Cross-platform mobile app built with React Native delivering daily inspirational content, Bible verses, and prayer reminders with offline support.</p>
+        <div class="proj-icon">📱</div>
+        <div class="proj-title">FlashLead Mobile App</div>
+        <p class="proj-desc">Contributed to a published React Native Android application, working with API-driven screens and mobile capabilities including Firebase messaging, contacts, location, media, local storage, and Google sign-in.</p>
         <div class="proj-footer">
           <div class="proj-tags">
-            <span class="proj-tag">React Native</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Mobile</span>
+            <span class="proj-tag">React Native</span><span class="proj-tag">Android Studio</span><span class="proj-tag">Firebase</span><span class="proj-tag">REST APIs</span>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.directionnorth.flashlead&amp;hl=en" target="_blank" rel="noopener" class="proj-link">
+            Google Play <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" style="transition-delay:.24s">
+        <div class="proj-icon">🔗</div>
+        <div class="proj-title">FalconFlex × Shopify Delivery Automation</div>
+        <p class="proj-desc">Private production integration for Asena Boutique using Node.js and Express. Automates shipping rates, delivery task creation, tracking, order updates, cancellations, webhook handling, and fulfillment synchronization; deployed on a Linux VPS with PM2.</p>
+        <div class="proj-footer">
+          <div class="proj-tags">
+            <span class="proj-tag">Node.js</span><span class="proj-tag">Express</span><span class="proj-tag">Shopify API</span><span class="proj-tag">VPS / PM2</span>
+          </div>
+          <a href="https://asena-boutique.com" target="_blank" rel="noopener" class="proj-link">
+            Case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="proj-card fade-up" style="transition-delay:.32s">
+        <div class="proj-icon">✝️</div>
+        <div class="proj-title">Daily Devotion</div>
+        <p class="proj-desc">React Native application that retrieves daily devotional content, presents verses and archived entries, supports personal notes, and plays devotion audio using a mobile track player.</p>
+        <div class="proj-footer">
+          <div class="proj-tags">
+            <span class="proj-tag">React Native</span><span class="proj-tag">TypeScript</span><span class="proj-tag">REST API</span><span class="proj-tag">Audio</span>
           </div>
           <a href="https://github.com/JoshuaShalim/DailyDevotion" target="_blank" rel="noopener" class="proj-link">
             GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
       </div>
-
-      <div class="proj-card fade-up" style="transition-delay:.24s">
-        <div class="proj-icon">🧹</div>
-        <div class="proj-title">Cleanfolio</div>
-        <p class="proj-desc">Minimalist React-based portfolio template with animated transitions, clean typography, and optimized performance for developers and creatives.</p>
+      <div class="proj-card fade-up" style="transition-delay:.36s">
+        <div class="proj-icon">🤖</div>
+        <div class="proj-title">Real-Time Drone &amp; Tank Detection</div>
+        <p class="proj-desc">Computer-vision project using Python, YOLOv5, and OpenCV to detect drones and tanks in image and video inputs, developed during an internship at Heavy Industries Taxila.</p>
         <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="proj-tag">React</span><span class="proj-tag">JavaScript</span><span class="proj-tag">CSS</span>
-          </div>
-          <a href="https://github.com/JoshuaShalim/Cleanfolio_react" target="_blank" rel="noopener" class="proj-link">
-            GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">YOLOv5</span><span class="proj-tag">OpenCV</span></div>
+          <a href="https://github.com/JoshuaShalim/Real_Time_Drone-Tank_Detection_System_Using_Python_yolov5" target="_blank" rel="noopener" class="proj-link">GitHub ↗</a>
         </div>
       </div>
-
-      <div class="proj-card fade-up" style="transition-delay:.32s">
-        <div class="proj-icon">🔗</div>
-        <div class="proj-title">FalconFlex-Shopify Integration</div>
-        <p class="proj-desc">Node.js/Express backend integration connecting the FalconFlex delivery platform with Shopify, handling order sync and fulfillment automation between systems.</p>
+      <div class="proj-card fade-up" style="transition-delay:.24s">
+        <div class="proj-icon">🩺</div>
+        <div class="proj-title">HeavenFlow Services</div>
+        <p class="proj-desc">Responsive healthcare-operations website with structured service pages, privacy and accessibility guidance, contact workflows, and an interactive multi-step revenue assessment.</p>
         <div class="proj-footer">
-          <div class="proj-tags">
-            <span class="proj-tag">Node.js</span><span class="proj-tag">Express</span><span class="proj-tag">Shopify API</span>
-          </div>
-          <a href="https://github.com/JoshuaShalim/falconflex-shopify" target="_blank" rel="noopener" class="proj-link">
-            GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
+          <div class="proj-tags"><span class="proj-tag">Responsive Web</span><span class="proj-tag">Form Validation</span><span class="proj-tag">UX</span></div>
+          <a href="https://heavenflowservices.com/" target="_blank" rel="noopener" class="proj-link">Visit site ↗</a>
         </div>
       </div>
     </div>
@@ -955,7 +988,7 @@
           <li>React / Next.js frontend</li>
           <li>REST API integration</li>
           <li>PostgreSQL / MySQL DB</li>
-          <li>AWS deployment & CI/CD</li>
+          <li>Linux VPS deployment &amp; PM2</li>
         </ul>
         <div class="svc-price">
           <span class="price-from">From </span>
@@ -972,7 +1005,7 @@
           <li>React Native apps</li>
           <li>iOS & Android support</li>
           <li>Push notifications</li>
-          <li>App Store deployment</li>
+          <li>Android build workflows</li>
         </ul>
         <div class="svc-price">
           <span class="price-from">From </span>
@@ -1053,27 +1086,27 @@
       </div>
 
       <div class="fade-up" style="transition-delay:.15s">
-        <div class="contact-form">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your name">
+              <label for="contactName">Name</label>
+              <input id="contactName" type="text" placeholder="Your name" required>
             </div>
             <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="your@email.com">
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" type="email" placeholder="your@email.com" required>
             </div>
           </div>
           <div class="form-group">
-            <label>Subject</label>
-            <input type="text" placeholder="What's this about?">
+            <label for="contactSubject">Subject</label>
+            <input id="contactSubject" type="text" placeholder="What's this about?" required>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Tell me about your project..."></textarea>
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" placeholder="Tell me about your project..." required></textarea>
           </div>
-          <button class="form-submit" onclick="handleSubmit(event)">Send Message →</button>
-        </div>
+          <button class="form-submit" type="submit">Create Email →</button>
+        </form>
       </div>
     </div>
   </div>
@@ -1100,25 +1133,30 @@
   });
 
   // Scroll animations
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  const animatedElements = document.querySelectorAll('.fade-up');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    animatedElements.forEach(el => obs.observe(el));
+  } else {
+    animatedElements.forEach(el => el.classList.add('visible'));
+  }
 
   // Form submit
   function handleSubmit(e) {
-    const btn = e.target;
-    btn.textContent = 'Sending...';
-    btn.style.opacity = '.6';
-    setTimeout(() => {
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = 'var(--green)';
-      setTimeout(() => {
-        btn.textContent = 'Send Message →';
-        btn.style.background = '';
-        btn.style.opacity = '';
-      }, 3000);
-    }, 1200);
+    e.preventDefault();
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const subject = document.getElementById('contactSubject').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    window.location.href = `mailto:joshuashalim15@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 </script>
 </body>
