@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 
 type Trace = { agent: string; detail: string; status: "complete" | "fallback" };
 type AssistantResult = { answer: string; mode: string; ragActive: boolean; sources: { title: string; url: string; score?: number }[]; trace: Trace[] };
-const suggestions = ["How does Joshua use AI responsibly?", "What Node.js systems has he built?", "Summarize his mobile experience."];
+const suggestions = ["What proves Joshua's interest in Agentic AI?", "What Node.js systems has he built?", "Summarize his mobile experience."];
 
 export function EvidenceAssistant() {
   const [question, setQuestion] = useState(suggestions[0]);
@@ -35,7 +35,7 @@ export function EvidenceAssistant() {
           <div className={`mode-pill ${result.ragActive ? "active" : "fallback"}`}><i /> {result.mode}</div>
           <div className="agent-trace">{result.trace.map((step, index) => <div key={`${step.agent}-${index}`}><span>{String(index + 1).padStart(2,"0")}</span><b>{step.agent}</b><p>{step.detail}</p><i>{step.status === "complete" ? "✓" : "~"}</i></div>)}</div>
           <div className="generated-answer"><span>Grounded answer</span><p>{result.answer}</p></div>
-          <div className="result-sources"><span>Sources</span>{result.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title} {typeof source.score === "number" ? `${Math.round(source.score * 100)}%` : ""} ↗</a>)}</div>
+          <div className="result-sources"><span>Sources</span>{result.sources.map((source) => <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.title}{typeof source.score === "number" ? ` · similarity ${Math.round(source.score * 100)}%` : ""} ↗</a>)}</div>
         </div> : null}
       </div>
       <div className="query-suggestions">{suggestions.map((item) => <button key={item} onClick={() => setQuestion(item)}>{item}</button>)}</div>
