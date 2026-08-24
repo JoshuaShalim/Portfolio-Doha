@@ -7,11 +7,11 @@ const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", variable: "-
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://joshuashalimportfolio.vercel.app"),
-  title: { default: "Joshua Shalim — Full-Stack & Mobile Developer", template: "%s — Joshua Shalim" },
-  description: "Full-stack and mobile developer in Doha building reliable web, mobile, API, automation, and AI-assisted product experiences.",
+  title: { default: "Joshua Shalim — Full-Stack, Mobile & AI-Focused Developer", template: "%s — Joshua Shalim" },
+  description: "Doha-based full-stack developer building web products, mobile applications, backend integrations, automation, and source-grounded AI systems.",
   openGraph: {
-    title: "Joshua Shalim — Full-Stack & Mobile Developer",
-    description: "An interactive portfolio of web, mobile, systems integration, and AI-assisted engineering work.",
+    title: "Joshua Shalim — Full-Stack, Mobile & AI-Focused Developer",
+    description: "Verified web, mobile, systems integration, and AI engineering case studies.",
     url: "https://joshuashalimportfolio.vercel.app",
     siteName: "Joshua Shalim Portfolio",
     type: "website"
