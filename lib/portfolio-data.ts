@@ -105,16 +105,23 @@ export const skills = [
 
 export const evidence = [
   {
+    id: "contextforge",
+    title: "ContextForge RAG and agent orchestration project",
+    body: "Joshua built and deployed ContextForge as hands-on evidence of his growing AI and agentic engineering skills. The live Next.js application uses the Gemini API, Gemini embeddings, semantic vector retrieval, evidence validation, grounded answer generation, source links, caching, rate limiting, and a visible planner-retrieval-verification-answer workflow. The project demonstrates genuine interest in learning and applying RAG and controlled agent orchestration in working software.",
+    url: "https://joshuashalimportfolio.vercel.app/#ai-lab",
+    tags: ["ai", "agentic", "rag", "gemini", "llm", "embeddings", "retrieval", "orchestration", "contextforge"]
+  },
+  {
     id: "ai-workflow",
     title: "AI-assisted engineering workflow",
-    body: "Joshua has used Cursor, GitHub Copilot, Kilo Code, and ChatGPT since 2024 to plan work, prepare context, generate and revise code, inspect errors, test behavior, and verify deployment. He supervises and validates the output rather than presenting the tools as autonomous production agents.",
+    body: "Joshua has a genuine interest in AI and agentic engineering and is actively developing deeper practical skills in this direction. Since 2024, he has used Cursor, GitHub Copilot, Kilo Code, and ChatGPT to plan work, prepare context, generate and revise code, investigate errors, test behaviour, and support deployment. He applies an orchestration mindset by breaking larger objectives into focused stages, supplying relevant context, reviewing results, and iterating toward a verified outcome.",
     url: "https://github.com/JoshuaShalim",
     tags: ["ai", "agentic", "cursor", "copilot", "orchestration", "prompt", "context"]
   },
   {
     id: "hrsg",
     title: "HRSG Online contribution",
-    body: "At Shispare, Joshua contributed frontend screens, REST API integrations, PostgreSQL-backed workflows, and context documentation for HRSG Online. This was collaborative team work and is evidence of AI-assisted product development, not a claim that he independently built the platform or a production RAG pipeline.",
+    body: "At Shispare, Joshua contributed frontend screens, REST API integrations, PostgreSQL-backed workflows, and structured context documentation for HRSG Online. He used Cursor during planning, implementation, debugging, and revision as part of the team\u2019s AI-assisted product-development workflow.",
     url: "https://hrsgonline.com/",
     tags: ["hrsg", "react", "postgresql", "rest", "team", "context"]
   },
