@@ -62,7 +62,7 @@ async function retrievalAgent(query: string, apiKey?: string) {
   let documentVectors: number[][];
   if (apiKey) {
     try {
-      documentVectorCache ??= Promise.all(evidence.map((item) => geminiEmbedding(`${item.title}. ${item.body}`, "document", apiKey)));
+      documentVectorCache ??= Promise.all(evidence.map((item) => geminiEmbedding(`${item.title}. ${item.body} Tags: ${item.tags.join(", ")}`, "document", apiKey)));
       [queryVector, documentVectors] = await Promise.all([geminiEmbedding(query, "query", apiKey), documentVectorCache]);
       provider = "Gemini Embedding 2";
     } catch {
@@ -74,13 +74,27 @@ async function retrievalAgent(query: string, apiKey?: string) {
     queryVector = localEmbedding(query);
     documentVectors = evidence.map((item) => localEmbedding(`${item.title}. ${item.body} ${item.tags.join(" ")}`));
   }
-  const matches = evidence.map((item, index) => ({ item, score: cosine(queryVector, documentVectors[index]) })).sort((a, b) => b.score - a.score).slice(0, 3);
+  const matches = evidence.map((item, index) => ({ item, score: cosine(queryVector, documentVectors[index]) })).sort((a, b) => b.score - a.score).slice(0, 5);
   return { matches, provider };
 }
 
 function verificationAgent(matches: Awaited<ReturnType<typeof retrievalAgent>>["matches"]) {
-  const approved = matches.filter((match) => Number.isFinite(match.score));
-  return approved.length ? approved : matches.slice(0, 1);
+  const valid = matches.filter((match) => Number.isFinite(match.score));
+  if (!valid.length) return matches.slice(0, 1);
+
+  const bestScore = valid[0].score;
+  const relevanceThreshold = Math.max(0.45, bestScore - 0.1);
+  const approved = valid.filter((match) => match.score >= relevanceThreshold).slice(0, 3);
+  return approved.length ? approved : valid.slice(0, 1);
+}
+
+function cleanGeneratedText(text: string) {
+  return text
+    .replace(/\[(?:source\s*)?\d+\]/gi, "")
+    .replace(/\*\*/g, "")
+    .replace(/(^|\s)[*\u2022-]\s+/g, "$1")
+    .replace(/\s{2,}/g, " ")
+    .trim();
 }
 
 function extractGeneratedText(value: unknown) {
@@ -99,7 +113,7 @@ function extractGeneratedText(value: unknown) {
 }
 
 async function answerAgent(question: string, matches: ReturnType<typeof verificationAgent>, apiKey?: string) {
-  const fallback = matches.map(({ item }) => item.body).join(" ");
+  const fallback = matches.slice(0, 2).map(({ item }) => item.body).join(" ");
   if (!apiKey) return { answer: fallback, generated: false };
   const context = matches.map(({ item }, index) => `[${index + 1}] ${item.title}\n${item.body}\nSource: ${item.url}`).join("\n\n");
   try {
@@ -108,14 +122,14 @@ async function answerAgent(question: string, matches: ReturnType<typeof verifica
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
         model: "gemini-3.5-flash-lite",
-        system_instruction: "You are the answer agent in a portfolio RAG pipeline. Answer only from approved evidence. Be concise, attribute team contributions precisely, and never invent ownership, metrics, or experience.",
+        system_instruction: "You are the answer agent in Joshua Shalim's portfolio RAG pipeline. Answer only from the approved evidence. Return two or three natural, concise sentences in plain text with no Markdown, bullets, headings, or bracket citations because the interface displays sources separately. Attribute team contributions precisely and never invent ownership, metrics, or experience. When the question concerns AI or agentic development, clearly explain Joshua's genuine interest and learning direction and identify his live ContextForge RAG project as hands-on evidence when it appears in the approved context.",
         input: `Question: ${question}\n\nApproved evidence:\n${context}`,
         generation_config: { max_output_tokens: 260 }
       }),
       signal: AbortSignal.timeout(12000)
     });
     if (!response.ok) throw new Error("Generation provider unavailable");
-    const generated = extractGeneratedText(await response.json()).trim();
+    const generated = cleanGeneratedText(extractGeneratedText(await response.json()));
     return { answer: generated || fallback, generated: Boolean(generated) };
   } catch { return { answer: fallback, generated: false }; }
 }
@@ -134,7 +148,7 @@ export async function runPortfolioAgents(question: string, apiKey?: string) {
     trace: [
       { agent: "Planner agent", detail: `Mapped intent: ${plan.intent}`, status: "complete" as const },
       { agent: "Retrieval agent", detail: `Ranked ${evidence.length} evidence records with ${retrieval.provider}`, status: semantic ? "complete" as const : "fallback" as const },
-      { agent: "Verification agent", detail: `Approved ${approved.length} source-grounded records`, status: "complete" as const },
+      { agent: "Verification agent", detail: `Kept ${approved.length} records above the relevance threshold`, status: "complete" as const },
       { agent: "Answer agent", detail: output.generated ? "Generated from the approved context only" : "Returned extractive evidence because generation was unavailable", status: output.generated ? "complete" as const : "fallback" as const }
     ]
   };
