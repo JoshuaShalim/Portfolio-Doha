@@ -73,7 +73,7 @@ export function PortfolioExperience() {
           <div className="section-label reveal">AI Engineering Project</div>
           <div className="section-heading reveal">
             <h2>Portfolio AI Assistant.<br /><span>A practical RAG demonstration.</span></h2>
-            <p>Recruiters can ask questions about my work. The system first finds the most relevant verified project records, checks the evidence, and then produces a grounded answer with source links.</p>
+            <p>Recruiters can ask questions about my work. This live project demonstrates my genuine interest in AI and agentic engineering through semantic retrieval, evidence validation, grounded generation, and an inspectable orchestration flow.</p>
           </div>
           <div className="lab-grid">
             <div className="lab-case reveal">
