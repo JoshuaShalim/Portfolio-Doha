@@ -1,25 +1,20 @@
 export function HeroStage() {
   return (
-    <section id="overview" className="hero">
-      <div className="hero-grid" aria-hidden="true" />
-      <div className="orb orb-a" aria-hidden="true" /><div className="orb orb-b" aria-hidden="true" />
-      <div className="hero-copy">
-        <span className="kicker">Full-stack · Mobile · AI-assisted engineering</span>
-        <h1>Building systems<br />that move from<br /><em>idea to impact.</em></h1>
-        <div className="hero-foot">
-          <p>I&apos;m Joshua Shalim, a Doha-based developer connecting thoughtful interfaces, dependable APIs, mobile products, automation, and supervised AI workflows.</p>
-          <a href="#systems">Explore the work <span>↓</span></a>
-        </div>
+    <section id="home" className="hero section-shell">
+      <div className="hero-aura" aria-hidden="true" />
+      <div className="availability reveal"><span /> Available for full-stack, mobile & AI-focused roles</div>
+      <h1 className="reveal delay-1">Full-Stack Developer<br /><span>Building Useful Systems.</span></h1>
+      <p className="hero-copy reveal delay-2">I&apos;m Joshua Shalim—a Doha-based software developer building responsive web products, mobile applications, backend integrations, and carefully supervised AI workflows.</p>
+      <div className="hero-actions reveal delay-3">
+        <a className="button button-primary" href="#work">View selected work <span>↘</span></a>
+        <a className="button button-secondary" href="#ai-lab">Explore the AI lab <span>→</span></a>
       </div>
-      <div className="system-map" aria-label="A visual map of Joshua's product engineering practice">
-        <span className="map-line line-a" /><span className="map-line line-b" /><span className="map-line line-c" />
-        <div className="map-core"><b>JS</b><span>Orchestrate<br />& verify</span></div>
-        <div className="map-node node-a"><i>01</i><b>Interface</b><span>React / Mobile</span></div>
-        <div className="map-node node-b"><i>02</i><b>Logic</b><span>Node / APIs</span></div>
-        <div className="map-node node-c"><i>03</i><b>Data</b><span>SQL / NoSQL</span></div>
-        <div className="map-node node-d"><i>04</i><b>AI layer</b><span>Context / Tools</span></div>
+      <div className="proof-strip reveal delay-4">
+        <div><i>◉</i><span><b>4+ years</b> across product layers</span></div>
+        <div><i>⌘</i><span><b>Web + mobile</b> React ecosystem</span></div>
+        <div><i>△</i><span><b>Production systems</b> APIs & deployment</span></div>
+        <div><i>✦</i><span><b>AI-assisted</b> context-led workflow</span></div>
       </div>
-      <div className="hero-stamp"><span>04+</span> years across product layers</div>
     </section>
   );
 }
