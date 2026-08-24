@@ -83,12 +83,19 @@ function verificationAgent(matches: Awaited<ReturnType<typeof retrievalAgent>>["
   return approved.length ? approved : matches.slice(0, 1);
 }
 
-function extractText(value: unknown): string[] {
-  if (!value || typeof value !== "object") return [];
-  if (Array.isArray(value)) return value.flatMap(extractText);
+function extractGeneratedText(value: unknown) {
+  if (!value || typeof value !== "object") return "";
   const record = value as Record<string, unknown>;
-  const direct = [record.text, record.output_text].filter((item): item is string => typeof item === "string");
-  return [...direct, ...Object.entries(record).filter(([key]) => key !== "text" && key !== "output_text").flatMap(([, child]) => extractText(child))];
+  if (typeof record.output_text === "string") return record.output_text;
+  const steps = Array.isArray(record.steps) ? record.steps : [];
+  const stepText = steps.flatMap((step) => {
+    if (!step || typeof step !== "object" || (step as { type?: unknown }).type !== "model_output") return [];
+    const content = Array.isArray((step as { content?: unknown }).content) ? (step as { content: unknown[] }).content : [];
+    return content.flatMap((item) => item && typeof item === "object" && typeof (item as { text?: unknown }).text === "string" ? [(item as { text: string }).text] : []);
+  });
+  if (stepText.length) return stepText.join(" ");
+  const outputs = Array.isArray(record.outputs) ? record.outputs : [];
+  return outputs.flatMap((item) => item && typeof item === "object" && typeof (item as { text?: unknown }).text === "string" ? [(item as { text: string }).text] : []).join(" ");
 }
 
 async function answerAgent(question: string, matches: ReturnType<typeof verificationAgent>, apiKey?: string) {
@@ -108,7 +115,7 @@ async function answerAgent(question: string, matches: ReturnType<typeof verifica
       signal: AbortSignal.timeout(12000)
     });
     if (!response.ok) throw new Error("Generation provider unavailable");
-    const generated = [...new Set(extractText(await response.json()))].join(" ").trim();
+    const generated = extractGeneratedText(await response.json()).trim();
     return { answer: generated || fallback, generated: Boolean(generated) };
   } catch { return { answer: fallback, generated: false }; }
 }
