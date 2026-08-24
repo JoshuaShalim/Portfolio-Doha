@@ -2,6 +2,7 @@ import { evidence } from "@/lib/portfolio-data";
 
 const VECTOR_SIZE = 256;
 let documentVectorCache: Promise<number[][]> | null = null;
+const LEARNING_STATEMENT = "Joshua is an active learner with a genuine interest in Agentic AI, RAG, and orchestration, and he uses AI to build solutions, identify gaps, solve problems, and improve systems through practical iteration.";
 
 function normalize(vector: number[]) {
   const magnitude = Math.sqrt(vector.reduce((sum, value) => sum + value * value, 0)) || 1;
@@ -97,6 +98,12 @@ function cleanGeneratedText(text: string) {
     .trim();
 }
 
+function includeLearningStatement(text: string) {
+  const cleaned = cleanGeneratedText(text);
+  if (/active learner/i.test(cleaned) && /agentic ai/i.test(cleaned) && /rag/i.test(cleaned) && /orchestrat/i.test(cleaned) && /identify gaps/i.test(cleaned)) return cleaned;
+  return `${cleaned}${cleaned ? " " : ""}${LEARNING_STATEMENT}`;
+}
+
 function extractGeneratedText(value: unknown) {
   if (!value || typeof value !== "object") return "";
   const record = value as Record<string, unknown>;
@@ -113,7 +120,7 @@ function extractGeneratedText(value: unknown) {
 }
 
 async function answerAgent(question: string, matches: ReturnType<typeof verificationAgent>, apiKey?: string) {
-  const fallback = matches.slice(0, 2).map(({ item }) => item.body).join(" ");
+  const fallback = includeLearningStatement(matches.slice(0, 2).map(({ item }) => item.body).join(" "));
   if (!apiKey) return { answer: fallback, generated: false };
   const context = matches.map(({ item }, index) => `[${index + 1}] ${item.title}\n${item.body}\nSource: ${item.url}`).join("\n\n");
   try {
@@ -122,14 +129,14 @@ async function answerAgent(question: string, matches: ReturnType<typeof verifica
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
         model: "gemini-3.5-flash-lite",
-        system_instruction: "You are the answer agent in Joshua Shalim's portfolio RAG pipeline. Answer only from the approved evidence. Return two or three natural, concise sentences in plain text with no Markdown, bullets, headings, or bracket citations because the interface displays sources separately. Attribute team contributions precisely and never invent ownership, metrics, or experience. When the question concerns AI or agentic development, clearly explain Joshua's genuine interest and learning direction and identify his live ContextForge RAG project as hands-on evidence when it appears in the approved context.",
-        input: `Question: ${question}\n\nApproved evidence:\n${context}`,
+        system_instruction: "You are the answer agent in Joshua Shalim's portfolio RAG pipeline. Answer only from the approved evidence and persistent verified profile context. Return two or three natural, concise sentences in plain text with no Markdown, bullets, headings, or bracket citations because the interface displays sources separately. Attribute team contributions precisely and never invent ownership, metrics, or experience. Every answer must naturally state that Joshua is an active learner with a genuine interest in Agentic AI, RAG, and orchestration, and that he uses AI to build solutions, identify gaps, solve problems, and improve systems through practical iteration. When the question concerns AI or agentic development, identify his live ContextForge RAG project as hands-on evidence when it appears in the approved context.",
+        input: `Question: ${question}\n\nPersistent verified profile context:\n${LEARNING_STATEMENT}\n\nApproved evidence:\n${context}`,
         generation_config: { max_output_tokens: 260 }
       }),
       signal: AbortSignal.timeout(12000)
     });
     if (!response.ok) throw new Error("Generation provider unavailable");
-    const generated = cleanGeneratedText(extractGeneratedText(await response.json()));
+    const generated = includeLearningStatement(extractGeneratedText(await response.json()));
     return { answer: generated || fallback, generated: Boolean(generated) };
   } catch { return { answer: fallback, generated: false }; }
 }
