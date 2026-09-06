@@ -6,7 +6,7 @@ import { ProjectGallery } from "./project-gallery";
 import { EvidenceAssistant } from "./evidence-assistant";
 import { experience, skills } from "@/lib/portfolio-data";
 
-const navItems = [["about", "About"], ["ai-lab", "AI Lab"], ["work", "Work"], ["experience", "Experience"], ["contact", "Contact"]] as const;
+const navItems = [["work", "Work"], ["skills", "Skills"], ["ai-lab", "AI Lab"], ["experience", "Experience"], ["contact", "Contact"]] as const;
 
 export function PortfolioExperience() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -100,7 +100,7 @@ export function PortfolioExperience() {
           <ProjectGallery />
         </section>
 
-        <section className="section-shell section-block stack-section">
+        <section id="skills" className="section-shell section-block stack-section">
           <div className="section-label reveal">Technical Stack</div>
           <div className="section-heading compact reveal"><h2>Tools selected<br /><span>for the problem.</span></h2></div>
           <div className="stack-groups reveal">
@@ -122,7 +122,7 @@ export function PortfolioExperience() {
 
         <section id="contact" className="section-shell section-block contact-section">
           <div className="contact-card reveal">
-            <div><span className="section-label">Contact</span><h2>Let&apos;s build something<br /><em>useful and reliable.</em></h2><p>Based in Doha with a valid QID. Available after a 30-day notice period.</p></div>
+            <div><span className="section-label">Contact</span><h2>Let&apos;s build something<br /><em>useful and reliable.</em></h2></div>
             <div className="contact-actions">
               <span className="contact-email">joshuashalim15@gmail.com</span>
               <button className="button button-primary" onClick={copyEmail}>{emailCopied ? "Email copied ✓" : "Copy email"}</button>
