@@ -11,13 +11,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "HRSG Online",
-    eyebrow: "Team contribution at Shispare",
-    summary: "A PostgreSQL-backed HR platform developed by a team with AI-assisted engineering as part of the product workflow.",
-    contribution: "Built frontend screens, integrated REST APIs, worked with backend data flows, and prepared context documentation that helped AI tools make safer, more relevant changes.",
-    stack: ["React", "REST APIs", "PostgreSQL", "Cursor", "Context engineering"],
-    category: "AI-assisted",
-    links: [{ label: "Visit product", href: "https://hrsgonline.com/" }],
+    title: "FalconFlex × Shopify",
+    eyebrow: "Private production integration",
+    summary: "A delivery automation service for Asena Boutique connecting Shopify orders with FalconFlex logistics.",
+    contribution: "Built Node/Express workflows for shipping rates, task creation, tracking, cancellations, order and fulfillment synchronization, webhooks, thermal receipts, and Linux VPS operation with PM2.",
+    stack: ["Node.js", "Express", "REST APIs", "Shopify GraphQL", "Webhooks", "Linux VPS"],
+    category: "Systems",
+    links: [{ label: "Store", href: "https://asena-boutique.com/" }],
     featured: true
   },
   {
@@ -35,13 +35,13 @@ export const projects: Project[] = [
     featured: true
   },
   {
-    title: "FalconFlex × Shopify",
-    eyebrow: "Private production integration",
-    summary: "A delivery automation service for Asena Boutique connecting Shopify orders with FalconFlex logistics.",
-    contribution: "Built Node/Express workflows for shipping rates, task creation, tracking, cancellations, order and fulfillment synchronization, webhooks, thermal receipts, and Linux VPS operation with PM2.",
-    stack: ["Node.js", "Express", "REST APIs", "Shopify CLI", "Webhooks", "Linux VPS"],
-    category: "Systems",
-    links: [{ label: "Store", href: "https://asena-boutique.com/" }],
+    title: "HRSG Online",
+    eyebrow: "Team contribution at Shispare",
+    summary: "A PostgreSQL-backed HR platform developed by a team with AI-assisted engineering as part of the product workflow.",
+    contribution: "Built frontend screens, integrated REST APIs, worked with backend data flows, and prepared context documentation that helped AI tools make safer, more relevant changes.",
+    stack: ["React", "REST APIs", "PostgreSQL", "Cursor", "Context engineering"],
+    category: "AI-assisted",
+    links: [{ label: "Visit product", href: "https://hrsgonline.com/" }],
     featured: true
   },
   {
@@ -52,15 +52,6 @@ export const projects: Project[] = [
     stack: ["React Native", "Firebase", "Android Studio", "Native APIs"],
     category: "Mobile",
     links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.directionnorth.flashlead&hl=en" }]
-  },
-  {
-    title: "Omnix",
-    eyebrow: "React Native authentication system",
-    summary: "A mobile authentication foundation designed around Supabase sessions and protected navigation.",
-    contribution: "Implemented email/password access, Google OAuth, password reset, deep linking, session restoration, protected screens, and logout behavior.",
-    stack: ["React Native", "Supabase", "OAuth", "Deep links"],
-    category: "Mobile",
-    links: [{ label: "Repository", href: "https://github.com/JoshuaShalim/MyReactNativeProject" }]
   },
   {
     title: "Daily Devotion",
@@ -93,21 +84,21 @@ export const projects: Project[] = [
 
 export const experience = [
   { period: "Apr 2026 — Present", role: "IT & E-commerce Specialist", company: "Al Norah Trading & Services", detail: "Application support, integrations, platform configuration, product data, performance, and e-commerce operations." },
-  { period: "Aug 2025 — Jan 2026", role: "AI-Driven Software Developer", company: "Shispare", detail: "Frontend delivery, API integration, testing, performance work, and context-rich AI-assisted development for web products." },
+  { period: "Aug 2025 — Jan 2026", role: "Frontend Developer", company: "Shispare", detail: "React/Next.js frontend delivery, REST API integration, PostgreSQL-backed workflows, testing, performance work, and context-rich AI-assisted development." },
   { period: "Jan 2024 — Jul 2025", role: "Software Support & Operations Associate", company: "Al Norah Trading & Services", detail: "Debugged workflows, reproduced issues, tested fixes, supported users, and maintained MySQL/PostgreSQL data processes." },
-  { period: "Apr 2023 — Dec 2023", role: "WordPress Developer", company: "Medflow", detail: "Built and maintained responsive business websites and content workflows." },
+  { period: "Apr 2023 — Apr 2024", role: "WordPress Developer & IT Specialist", company: "Medflow Solutions", detail: "Built and maintained responsive business websites, content workflows, SEO, performance, and ongoing technical support." },
   { period: "Jan 2022 — Feb 2023", role: "Mobile App Developer", company: "Codlers / FlashLead", detail: "Contributed to React Native features and Android delivery for a published mobile product." }
 ];
 
 export const skills = [
-  "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Node.js", "Express", "REST APIs", "PostgreSQL", "MySQL", "MongoDB", "Supabase", "Shopify", "Git", "Linux", "VPS deployment", "Cursor", "GitHub Copilot", "Prompt engineering", "Context engineering"
+  "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Node.js", "Express", "REST APIs", "Webhooks", "Shopify GraphQL", "PostgreSQL", "MySQL", "MongoDB", "Supabase", "Shopify", "Git", "Linux", "VPS deployment", "Cursor", "GitHub Copilot", "Prompt engineering", "Context engineering"
 ];
 
 export const evidence = [
   {
     id: "contextforge",
-    title: "ContextForge RAG and agent orchestration project",
-    body: "Joshua built and deployed ContextForge as hands-on evidence of his growing AI and agentic engineering skills. The live Next.js application uses the Gemini API, Gemini embeddings, semantic vector retrieval, evidence validation, grounded answer generation, source links, caching, rate limiting, and a visible planner-retrieval-verification-answer workflow. The project demonstrates genuine interest in learning and applying RAG and controlled agent orchestration in working software.",
+    title: "ContextForge RAG and controlled orchestration project",
+    body: "Joshua built and deployed ContextForge as hands-on evidence of his growing AI engineering skills. The live Next.js application uses the Gemini API, Gemini embeddings, semantic vector retrieval, evidence validation, grounded answer generation, source links, caching, rate limiting, and a visible planner-retrieval-verification-answer workflow. The project demonstrates genuine interest in learning and applying RAG and controlled workflow orchestration in working software.",
     url: "https://joshuashalimportfolio.vercel.app/#ai-lab",
     tags: ["ai", "agentic", "rag", "gemini", "llm", "embeddings", "retrieval", "orchestration", "contextforge"]
   },

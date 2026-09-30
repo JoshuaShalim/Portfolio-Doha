@@ -73,7 +73,7 @@ export function PortfolioExperience() {
           <div className="section-label reveal">AI Engineering Project</div>
           <div className="section-heading reveal">
             <h2>Portfolio AI Assistant.<br /><span>A practical RAG demonstration.</span></h2>
-            <p>Recruiters can ask questions about my work. This live project demonstrates my genuine interest in AI and agentic engineering through semantic retrieval, evidence validation, grounded generation, and an inspectable orchestration flow.</p>
+            <p>Recruiters can ask questions about my work. This live project demonstrates hands-on RAG learning through semantic retrieval, evidence validation, grounded generation, and an inspectable controlled workflow.</p>
           </div>
           <div className="lab-grid">
             <div className="lab-case reveal">
@@ -86,7 +86,7 @@ export function PortfolioExperience() {
                 <li><b>3. Verify</b><span>Keeps supported records and preserves their source links.</span></li>
                 <li><b>4. Answer</b><span>Uses only the approved context rather than unsupported assumptions.</span></li>
               </ul>
-              <div className="lab-tags"><span>Gemini API</span><span>Embeddings</span><span>Vector retrieval</span><span>RAG</span><span>Agent orchestration</span><span>Next.js</span></div>
+              <div className="lab-tags"><span>Gemini API</span><span>Embeddings</span><span>Vector retrieval</span><span>RAG</span><span>Controlled orchestration</span><span>Next.js</span></div>
               <a className="source-link" href="https://github.com/JoshuaShalim/Portfolio-Doha/tree/main/app/api/assistant" target="_blank" rel="noreferrer">Inspect the source code ↗</a>
             </div>
             <EvidenceAssistant />
@@ -107,8 +107,9 @@ export function PortfolioExperience() {
             <div><h3>Frontend</h3>{skills.filter((skill) => ["JavaScript","TypeScript","React","Next.js"].includes(skill)).map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Mobile</h3>{["React Native","Android Studio","Firebase","Native APIs"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Backend & data</h3>{skills.filter((skill) => ["Node.js","Express","REST APIs","PostgreSQL","MySQL","MongoDB","Supabase"].includes(skill)).map((skill) => <span key={skill}>{skill}</span>)}</div>
+            <div><h3>Commerce & integrations</h3>{["Shopify","Shopify GraphQL","Webhooks","REST APIs","Shopify CLI"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>AI workflow</h3>{["Gemini API","RAG lab","Embeddings","Cursor","GitHub Copilot","Context engineering"].map((skill) => <span key={skill}>{skill}</span>)}</div>
-            <div><h3>Infrastructure</h3>{["Git","Linux","VPS deployment","PM2","Vercel","Shopify CLI"].map((skill) => <span key={skill}>{skill}</span>)}</div>
+            <div><h3>Infrastructure</h3>{["Git","Linux","VPS deployment","PM2","Vercel"].map((skill) => <span key={skill}>{skill}</span>)}</div>
           </div>
         </section>
 
