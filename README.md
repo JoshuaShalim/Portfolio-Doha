@@ -1,23 +1,27 @@
-# Joshua Shalim - Full-Stack E-Commerce Portfolio
+# Joshua Shalim — IT Support & Full-Stack Systems Portfolio
 
-Production portfolio for a Doha-based full-stack developer working across e-commerce, web, mobile, backend integrations, workflow automation, and grounded AI systems.
+Portfolio for a Doha-based IT support and systems professional with development experience across e-commerce, web, mobile, backend integrations, and operations.
 
 **Live portfolio:** https://joshuashalimportfolio.vercel.app/
 
-## What this repository demonstrates
+## Current focus
 
-- React and Next.js interface development
-- TypeScript application structure
-- Node.js API integration and server-side routes
-- Shopify, delivery, and webhook workflow experience
-- Responsive portfolio architecture and deployment on Vercel
-- A live Gemini RAG assistant with embeddings, semantic retrieval, evidence filtering, grounded generation, caching, rate limiting, and transparent fallback behavior
+- IT support, PC hardware, operating systems, networking, and remote assistance
+- E-commerce operations and Shopify integrations
+- React, Next.js, React Native, Node.js, Express, and databases
+- Clear troubleshooting, documentation, testing, and user support
 
-## Featured production evidence
+## Recent learning and achievements
 
-### FalconFlex x Shopify delivery automation
+- Completed LinkedIn Learning preparation coursework for **CompTIA A+ Core 1 (220-1201)** in October 2026. This is exam preparation coursework, not a CompTIA certification.
+- Completed a practical **AnyDesk remote-access and file-transfer lab** across two computers.
+- Continuing **PC Hardware Technician** coursework through BYU-Pathway Worldwide / Ensign College.
 
-Private Node.js/Express production integration connecting Shopify with FalconFlex for carrier rates, delivery-task creation, tracking, cancellations, webhooks, order updates, and fulfillment synchronization. Operated on a Linux VPS with Git, SSH, and PM2.
+## Featured evidence
+
+### FalconFlex × Shopify delivery automation
+
+Private Node.js/Express integration connecting Shopify with FalconFlex for carrier rates, delivery-task creation, tracking, cancellations, webhooks, order updates, and fulfillment synchronization. Operated on a Linux VPS with Git, SSH, and PM2.
 
 ### Flow Finance
 
@@ -27,9 +31,11 @@ Public MERN application with JWT authentication, protected user data, transactio
 - Frontend: https://github.com/JoshuaShalim/expense-tracker
 - Backend: https://github.com/JoshuaShalim/expense-tracker-backend
 
-### ContextForge portfolio assistant
+### Portfolio evidence assistant
 
-Controlled RAG workflow that identifies a retrieval objective, generates Gemini embeddings, ranks evidence through semantic similarity, filters the selected context, and produces a grounded answer with visible sources. The planner, retrieval, verification, and answer components are orchestrated stages rather than independent autonomous agents.
+A small learning prototype built into this portfolio. It searches a fixed, hand-maintained evidence set and shows its selected records. When configured, it uses Gemini embeddings and Gemini-generated answers; otherwise it uses deterministic local text-vector retrieval and returns evidence directly.
+
+This project is intentionally described as a prototype. Its visible stages are ordinary application functions—not independent autonomous agents—and it should not be presented as a production RAG platform.
 
 ## Local development
 
@@ -38,13 +44,13 @@ npm install
 npm run dev
 ```
 
-Create a local environment file when testing Gemini mode:
+To test Gemini mode, create a local environment file:
 
 ```env
 GEMINI_API_KEY=your_key_here
 ```
 
-Without a valid Gemini key, the assistant reports and uses its deterministic local retrieval fallback.
+Without a valid Gemini key, the assistant reports and uses its local retrieval fallback.
 
 ## Quality checks
 
@@ -55,4 +61,4 @@ npm run build
 
 ## Author
 
-[Joshua Shalim](https://www.linkedin.com/in/joshua-shalim/) - Full-Stack E-Commerce Developer in Doha, Qatar
+[Joshua Shalim](https://www.linkedin.com/in/joshua-shalim/) — IT Support & Full-Stack Systems, Doha, Qatar
