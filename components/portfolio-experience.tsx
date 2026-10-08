@@ -65,7 +65,7 @@ export function PortfolioExperience() {
             <div><b>4+</b><span>Years in software<br />and product operations</span></div>
             <div><b>3</b><span>Product layers:<br />web, mobile, backend</span></div>
             <div><b>1</b><span>Published Android<br />team contribution</span></div>
-            <div><b>A+</b><span>Core 1 preparation<br />course completed</span></div>
+            <div><b>4</b><span>Cisco credentials<br />verified on Credly</span></div>
           </div>
         </section>
 
@@ -101,10 +101,10 @@ export function PortfolioExperience() {
         </section>
 
         <section id="achievements" className="section-shell section-block achievements-section">
-          <div className="section-label reveal">Recent Achievements</div>
-          <div className="section-heading reveal"><h2>Learning backed<br /><span>by practical work.</span></h2><p>Recent progress in IT support, PC hardware, networking, and remote assistance—described accurately as coursework and projects, not certifications I have not earned.</p></div>
+          <div className="section-label reveal">Credentials & Training</div>
+          <div className="section-heading reveal"><h2>Professional learning.<br /><span>Verified progress.</span></h2><p>Cisco Networking Academy credentials verified through Credly, alongside structured preparation for both CompTIA A+ exams.</p></div>
           <div className="achievement-grid">
-            {achievements.map((item, index) => <article className="achievement-card reveal" key={item.title}><div><span>{String(index + 1).padStart(2,"0")}</span><time>{item.date}</time></div><small>{item.status}</small><h3>{item.title}</h3><b>{item.issuer}</b><p>{item.detail}</p></article>)}
+            {achievements.map((item, index) => <article className="achievement-card reveal" key={item.title}><div><span>{String(index + 1).padStart(2,"0")}</span><time>{item.date}</time></div><small>{item.status}</small><h3>{item.title}</h3><b>{item.issuer}</b><p>{item.detail}</p>{item.url ? <a className="credential-link" href={item.url} target="_blank" rel="noreferrer">Verify on Credly ↗</a> : null}</article>)}
           </div>
         </section>
 
