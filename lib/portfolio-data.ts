@@ -37,9 +37,9 @@ export const projects: Project[] = [
   {
     title: "HRSG Online",
     eyebrow: "Team contribution at Shispare",
-    summary: "A PostgreSQL-backed HR platform developed by a team with AI-assisted engineering as part of the product workflow.",
-    contribution: "Built frontend screens, integrated REST APIs, worked with backend data flows, and prepared context documentation that helped AI tools make safer, more relevant changes.",
-    stack: ["React", "REST APIs", "PostgreSQL", "Cursor", "Context engineering"],
+    summary: "A PostgreSQL-backed HR platform developed by a team using AI-assisted development tools.",
+    contribution: "Built frontend screens, integrated REST APIs, worked with backend data flows, and prepared context documentation that helped AI tools make more relevant changes.",
+    stack: ["React", "REST APIs", "PostgreSQL", "Cursor", "Documentation"],
     category: "AI-assisted",
     links: [{ label: "Visit product", href: "https://hrsgonline.com/" }],
     featured: true
@@ -82,6 +82,30 @@ export const projects: Project[] = [
   }
 ];
 
+export const achievements = [
+  {
+    date: "Oct 2026",
+    title: "CompTIA A+ Core 1 learning path",
+    issuer: "LinkedIn Learning",
+    detail: "Completed preparation coursework for the CompTIA A+ Core 1 (220-1201) exam, covering hardware, networking, mobile devices, virtualization, and troubleshooting.",
+    status: "Course completed"
+  },
+  {
+    date: "Oct 2026",
+    title: "Remote access and file-transfer lab",
+    issuer: "PC Hardware Technician coursework",
+    detail: "Configured AnyDesk on two computers, established an approved remote session, controlled the remote desktop, transferred a Word document, and verified the file on the receiving computer.",
+    status: "Practical project"
+  },
+  {
+    date: "2026 — Present",
+    title: "PC Hardware Technician",
+    issuer: "BYU-Pathway Worldwide / Ensign College",
+    detail: "Developing practical skills in computer hardware, operating systems, networking, security, remote support, and technical troubleshooting.",
+    status: "In progress"
+  }
+];
+
 export const experience = [
   { period: "Apr 2026 — Present", role: "IT & E-commerce Specialist", company: "Al Norah Trading & Services", detail: "Application support, integrations, platform configuration, product data, performance, and e-commerce operations." },
   { period: "Aug 2025 — Jan 2026", role: "Frontend Developer", company: "Shispare", detail: "React/Next.js frontend delivery, REST API integration, PostgreSQL-backed workflows, testing, performance work, and context-rich AI-assisted development." },
@@ -91,30 +115,33 @@ export const experience = [
 ];
 
 export const skills = [
-  "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Node.js", "Express", "REST APIs", "Webhooks", "Shopify GraphQL", "PostgreSQL", "MySQL", "MongoDB", "Supabase", "Shopify", "Git", "Linux", "VPS deployment", "Cursor", "GitHub Copilot", "Prompt engineering", "Context engineering"
+  "Technical support", "Hardware troubleshooting", "Remote support", "Networking fundamentals",
+  "JavaScript", "TypeScript", "React", "Next.js", "React Native", "Node.js", "Express",
+  "REST APIs", "Webhooks", "Shopify GraphQL", "PostgreSQL", "MySQL", "MongoDB",
+  "Supabase", "Shopify", "Git", "Linux", "VPS deployment", "Cursor", "GitHub Copilot"
 ];
 
 export const evidence = [
   {
-    id: "contextforge",
-    title: "ContextForge RAG and controlled orchestration project",
-    body: "Joshua built and deployed ContextForge as hands-on evidence of his growing AI engineering skills. The live Next.js application uses the Gemini API, Gemini embeddings, semantic vector retrieval, evidence validation, grounded answer generation, source links, caching, rate limiting, and a visible planner-retrieval-verification-answer workflow. The project demonstrates genuine interest in learning and applying RAG and controlled workflow orchestration in working software.",
-    url: "https://joshuashalimportfolio.vercel.app/#ai-lab",
-    tags: ["ai", "agentic", "rag", "gemini", "llm", "embeddings", "retrieval", "orchestration", "contextforge"]
+    id: "portfolio-assistant",
+    title: "Portfolio evidence assistant prototype",
+    body: "Joshua built a small Next.js portfolio Q&A prototype. It searches a fixed set of verified portfolio records, can use Gemini embeddings and Gemini-generated answers when an API key is available, displays the selected sources, and falls back to deterministic local text-vector retrieval when Gemini is unavailable. It is a learning project, not a production knowledge platform or autonomous multi-agent system.",
+    url: "https://github.com/JoshuaShalim/Portfolio-Doha/tree/main/app/api/assistant",
+    tags: ["ai", "rag", "gemini", "embeddings", "retrieval", "prototype", "portfolio"]
   },
   {
-    id: "ai-workflow",
-    title: "AI-assisted engineering workflow",
-    body: "Joshua has a genuine interest in AI and agentic engineering and is actively developing deeper practical skills in this direction. Since 2024, he has used Cursor, GitHub Copilot, Kilo Code, and ChatGPT to plan work, prepare context, generate and revise code, investigate errors, test behaviour, and support deployment. He applies an orchestration mindset by breaking larger objectives into focused stages, supplying relevant context, reviewing results, and iterating toward a verified outcome.",
-    url: "https://github.com/JoshuaShalim",
-    tags: ["ai", "agentic", "cursor", "copilot", "orchestration", "prompt", "context"]
+    id: "it-learning",
+    title: "Recent IT support learning",
+    body: "In October 2026, Joshua completed LinkedIn Learning preparation coursework for CompTIA A+ Core 1 (220-1201) and completed a practical AnyDesk lab involving installation, an approved remote-control session, file transfer, and verification across two computers. He is continuing PC Hardware Technician coursework through BYU-Pathway Worldwide and Ensign College.",
+    url: "https://www.linkedin.com/in/joshua-shalim/",
+    tags: ["it support", "comptia a+", "hardware", "networking", "anydesk", "remote support", "learning"]
   },
   {
     id: "hrsg",
     title: "HRSG Online contribution",
-    body: "At Shispare, Joshua contributed frontend screens, REST API integrations, PostgreSQL-backed workflows, and structured context documentation for HRSG Online. He used Cursor during planning, implementation, debugging, and revision as part of the team\u2019s AI-assisted product-development workflow.",
+    body: "At Shispare, Joshua contributed frontend screens, REST API integrations, PostgreSQL-backed workflows, and structured context documentation for HRSG Online. He used Cursor during planning, implementation, debugging, and revision as part of the team’s AI-assisted product-development workflow.",
     url: "https://hrsgonline.com/",
-    tags: ["hrsg", "react", "postgresql", "rest", "team", "context"]
+    tags: ["hrsg", "react", "postgresql", "rest", "team", "documentation"]
   },
   {
     id: "flow-finance",
