@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { HeroStage } from "./hero-stage";
 import { ProjectGallery } from "./project-gallery";
 import { EvidenceAssistant } from "./evidence-assistant";
-import { experience, skills } from "@/lib/portfolio-data";
+import { achievements, experience, skills } from "@/lib/portfolio-data";
 
-const navItems = [["work", "Work"], ["skills", "Skills"], ["ai-lab", "AI Lab"], ["experience", "Experience"], ["contact", "Contact"]] as const;
+const navItems = [["work", "Work"], ["achievements", "Achievements"], ["skills", "Skills"], ["ai-lab", "Evidence Demo"], ["experience", "Experience"], ["contact", "Contact"]] as const;
 
 export function PortfolioExperience() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -53,51 +53,59 @@ export function PortfolioExperience() {
         <section id="about" className="section-shell section-block about-section">
           <div className="section-label reveal">About</div>
           <div className="section-heading reveal">
-            <h2>Developer breadth.<br /><span>Product ownership.</span></h2>
-            <p>I work where interface quality, application logic, data, and operations meet. That means I can understand a user-facing issue, follow it through an API and database, and ship a verified fix—not just hand it to the next person.</p>
+            <h2>Support mindset.<br /><span>Builder capability.</span></h2>
+            <p>I combine patient troubleshooting with practical development experience. I can help a user, investigate the underlying workflow, document the issue clearly, and build or integrate a lasting solution when needed.</p>
           </div>
           <div className="about-grid">
-            <article className="about-card reveal"><span>01</span><h3>Build end to end</h3><p>React and Next.js interfaces, React Native apps, Node/Express APIs, SQL and NoSQL data, authentication, integrations, and deployments.</p></article>
-            <article className="about-card reveal delay-1"><span>02</span><h3>Think operationally</h3><p>My software-support background shaped a practical approach to error states, real data, user impact, documentation, and production reliability.</p></article>
-            <article className="about-card reveal delay-2"><span>03</span><h3>Use AI deliberately</h3><p>I direct AI tools with focused context, review their work, test the complete path, and keep human responsibility for technical decisions.</p></article>
+            <article className="about-card reveal"><span>01</span><h3>Troubleshoot clearly</h3><p>I reproduce issues, isolate likely causes, communicate with users, document findings, and verify that a fix works in the real workflow.</p></article>
+            <article className="about-card reveal delay-1"><span>02</span><h3>Build end to end</h3><p>React and Next.js interfaces, React Native apps, Node/Express APIs, databases, authentication, integrations, and deployments.</p></article>
+            <article className="about-card reveal delay-2"><span>03</span><h3>Keep learning</h3><p>I am extending my software background through structured study of PC hardware, networking, operating systems, security, and remote support.</p></article>
           </div>
           <div className="number-grid reveal">
             <div><b>4+</b><span>Years in software<br />and product operations</span></div>
-            <div><b>3</b><span>Primary product layers:<br />web, mobile, backend</span></div>
+            <div><b>3</b><span>Product layers:<br />web, mobile, backend</span></div>
             <div><b>1</b><span>Published Android<br />team contribution</span></div>
-            <div><b>80%</b><span>Approx. load-performance<br />improvement at Shispare</span></div>
+            <div><b>A+</b><span>Core 1 preparation<br />course completed</span></div>
           </div>
         </section>
 
         <section id="ai-lab" className="section-shell section-block ai-lab-section">
-          <div className="section-label reveal">AI Engineering Project</div>
+          <div className="section-label reveal">Learning Prototype</div>
           <div className="section-heading reveal">
-            <h2>Portfolio AI Assistant.<br /><span>A practical RAG demonstration.</span></h2>
-            <p>Recruiters can ask questions about my work. This live project demonstrates hands-on RAG learning through semantic retrieval, evidence validation, grounded generation, and an inspectable controlled workflow.</p>
+            <h2>Portfolio evidence assistant.<br /><span>Small, useful and transparent.</span></h2>
+            <p>This is a learning demo—not a production AI platform. It searches a fixed set of portfolio records, shows the evidence it selected, and can use Gemini for embeddings and answer generation when configured.</p>
           </div>
           <div className="lab-grid">
             <div className="lab-case reveal">
-              <div className="case-top"><span>Live portfolio project</span><i>AI system 01</i></div>
-              <h3>What does it do?</h3>
-              <p>Instead of letting an AI invent an answer, this assistant searches a small knowledge base containing my verified projects and experience. Only the relevant records are supplied as context for the final answer.</p>
+              <div className="case-top"><span>Portfolio learning project</span><i>Prototype 01</i></div>
+              <h3>How it works</h3>
+              <p>The assistant searches a small, hand-maintained collection of project and experience records. It is intentionally narrow so every answer can point back to visible evidence.</p>
               <ul>
-                <li><b>1. Understand</b><span>Identifies whether the question concerns AI, backend, mobile, or general experience.</span></li>
-                <li><b>2. Retrieve</b><span>Converts the question into a vector and ranks the closest evidence.</span></li>
-                <li><b>3. Verify</b><span>Keeps supported records and preserves their source links.</span></li>
-                <li><b>4. Answer</b><span>Uses only the approved context rather than unsupported assumptions.</span></li>
+                <li><b>1. Classify</b><span>Maps the question to a broad portfolio topic.</span></li>
+                <li><b>2. Retrieve</b><span>Ranks the fixed evidence records using Gemini embeddings or a local text-vector fallback.</span></li>
+                <li><b>3. Filter</b><span>Keeps the strongest matches and preserves their links.</span></li>
+                <li><b>4. Respond</b><span>Generates a short answer when Gemini is available, otherwise returns evidence directly.</span></li>
               </ul>
-              <div className="lab-tags"><span>Gemini API</span><span>Embeddings</span><span>Vector retrieval</span><span>RAG</span><span>Controlled orchestration</span><span>Next.js</span></div>
+              <div className="lab-tags"><span>Next.js</span><span>Gemini API</span><span>Embeddings</span><span>Similarity ranking</span><span>Fallback mode</span></div>
               <a className="source-link" href="https://github.com/JoshuaShalim/Portfolio-Doha/tree/main/app/api/assistant" target="_blank" rel="noreferrer">Inspect the source code ↗</a>
             </div>
             <EvidenceAssistant />
           </div>
-          <div className="honesty-note reveal"><span>Current live mode</span><p>The assistant uses Gemini embeddings and grounded generation when available, with a transparent local retrieval fallback. The execution trace always shows which mode actually ran.</p></div>
+          <div className="honesty-note reveal"><span>Scope note</span><p>The “steps” shown here are ordinary application functions, not independent autonomous agents. The evidence set is small and stored in this repository. The interface reports whether Gemini or the local fallback actually ran.</p></div>
         </section>
 
         <section id="work" className="section-shell section-block work-section">
           <div className="section-label reveal">Selected Work</div>
           <div className="section-heading reveal"><h2>Systems with<br /><span>verifiable evidence.</span></h2><p>Every case separates what the product does from what I personally contributed. Links go to live products, published apps, or inspectable repositories.</p></div>
           <ProjectGallery />
+        </section>
+
+        <section id="achievements" className="section-shell section-block achievements-section">
+          <div className="section-label reveal">Recent Achievements</div>
+          <div className="section-heading reveal"><h2>Learning backed<br /><span>by practical work.</span></h2><p>Recent progress in IT support, PC hardware, networking, and remote assistance—described accurately as coursework and projects, not certifications I have not earned.</p></div>
+          <div className="achievement-grid">
+            {achievements.map((item, index) => <article className="achievement-card reveal" key={item.title}><div><span>{String(index + 1).padStart(2,"0")}</span><time>{item.date}</time></div><small>{item.status}</small><h3>{item.title}</h3><b>{item.issuer}</b><p>{item.detail}</p></article>)}
+          </div>
         </section>
 
         <section id="skills" className="section-shell section-block stack-section">
@@ -108,7 +116,7 @@ export function PortfolioExperience() {
             <div><h3>Mobile</h3>{["React Native","Android Studio","Firebase","Native APIs"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Backend & data</h3>{skills.filter((skill) => ["Node.js","Express","REST APIs","PostgreSQL","MySQL","MongoDB","Supabase"].includes(skill)).map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Commerce & integrations</h3>{["Shopify","Shopify GraphQL","Webhooks","REST APIs","Shopify CLI"].map((skill) => <span key={skill}>{skill}</span>)}</div>
-            <div><h3>AI workflow</h3>{["Gemini API","RAG lab","Embeddings","Cursor","GitHub Copilot","Context engineering"].map((skill) => <span key={skill}>{skill}</span>)}</div>
+            <div><h3>IT support</h3>{["Hardware troubleshooting","Remote support","Networking fundamentals","Windows"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Infrastructure</h3>{["Git","Linux","VPS deployment","PM2","Vercel"].map((skill) => <span key={skill}>{skill}</span>)}</div>
           </div>
         </section>
@@ -134,7 +142,7 @@ export function PortfolioExperience() {
           </div>
         </section>
       </main>
-      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a><p>Full-stack · Mobile · AI-assisted engineering</p><p>© 2026 Joshua Shalim</p></footer>
+      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a><p>IT support · Systems · Full-stack development</p><p>© 2026 Joshua Shalim</p></footer>
     </>
   );
 }
