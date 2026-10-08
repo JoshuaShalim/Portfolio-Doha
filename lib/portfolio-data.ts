@@ -82,27 +82,54 @@ export const projects: Project[] = [
   }
 ];
 
-export const achievements = [
+export type Achievement = {
+  date: string;
+  title: string;
+  issuer: string;
+  detail: string;
+  status: string;
+  url?: string;
+};
+
+export const achievements: Achievement[] = [
   {
-    date: "Oct 2026",
-    title: "CompTIA A+ Core 1 learning path",
+    date: "Expected Oct 2026",
+    title: "CompTIA A+ Core 1 & Core 2 Exam Preparation",
     issuer: "LinkedIn Learning",
-    detail: "Completed preparation coursework for the CompTIA A+ Core 1 (220-1201) exam, covering hardware, networking, mobile devices, virtualization, and troubleshooting.",
-    status: "Course completed"
-  },
-  {
-    date: "Oct 2026",
-    title: "Remote access and file-transfer lab",
-    issuer: "PC Hardware Technician coursework",
-    detail: "Configured AnyDesk on two computers, established an approved remote session, controlled the remote desktop, transferred a Word document, and verified the file on the receiving computer.",
-    status: "Practical project"
-  },
-  {
-    date: "2026 — Present",
-    title: "PC Hardware Technician",
-    issuer: "BYU-Pathway Worldwide / Ensign College",
-    detail: "Developing practical skills in computer hardware, operating systems, networking, security, remote support, and technical troubleshooting.",
+    detail: "Completing structured preparation for the CompTIA A+ 220-1201 and 220-1202 exams, covering hardware, operating systems, networking, security, and troubleshooting.",
     status: "In progress"
+  },
+  {
+    date: "Oct 5, 2026",
+    title: "Network Support and Security",
+    issuer: "Cisco Networking Academy",
+    detail: "Verified digital credential covering network support practices, endpoint and network security, troubleshooting, and operational reliability.",
+    status: "Credly verified",
+    url: "https://www.credly.com/users/joshua-shalim/badges"
+  },
+  {
+    date: "Sep 22, 2026",
+    title: "Networking Devices and Initial Configuration",
+    issuer: "Cisco Networking Academy",
+    detail: "Verified digital credential covering network devices, addressing, cabling, basic configuration, and connectivity validation.",
+    status: "Credly verified",
+    url: "https://www.credly.com/users/joshua-shalim/badges"
+  },
+  {
+    date: "Sep 14, 2026",
+    title: "Network Addressing and Basic Troubleshooting",
+    issuer: "Cisco Networking Academy",
+    detail: "Verified digital credential demonstrating foundational IP addressing, connectivity testing, and systematic network troubleshooting.",
+    status: "Credly verified",
+    url: "https://www.credly.com/users/joshua-shalim/badges"
+  },
+  {
+    date: "Sep 8, 2026",
+    title: "Networking Basics",
+    issuer: "Cisco Networking Academy",
+    detail: "Verified digital credential covering networking concepts, protocols, topologies, addressing, and essential network operations.",
+    status: "Credly verified",
+    url: "https://www.credly.com/users/joshua-shalim/badges"
   }
 ];
 
@@ -130,11 +157,11 @@ export const evidence = [
     tags: ["ai", "rag", "gemini", "embeddings", "retrieval", "prototype", "portfolio"]
   },
   {
-    id: "it-learning",
-    title: "Recent IT support learning",
-    body: "In October 2026, Joshua completed LinkedIn Learning preparation coursework for CompTIA A+ Core 1 (220-1201) and completed a practical AnyDesk lab involving installation, an approved remote-control session, file transfer, and verification across two computers. He is continuing PC Hardware Technician coursework through BYU-Pathway Worldwide and Ensign College.",
-    url: "https://www.linkedin.com/in/joshua-shalim/",
-    tags: ["it support", "comptia a+", "hardware", "networking", "anydesk", "remote support", "learning"]
+    id: "it-credentials",
+    title: "Cisco credentials and CompTIA A+ preparation",
+    body: "Joshua holds four Cisco Networking Academy digital credentials verified through Credly: Networking Basics; Network Addressing and Basic Troubleshooting; Networking Devices and Initial Configuration; and Network Support and Security. He is also completing LinkedIn Learning preparation for the CompTIA A+ Core 1 (220-1201) and Core 2 (220-1202) exams, with completion expected in October 2026.",
+    url: "https://www.credly.com/users/joshua-shalim/badges",
+    tags: ["it support", "cisco", "credly", "comptia a+", "hardware", "networking", "security", "troubleshooting"]
   },
   {
     id: "hrsg",

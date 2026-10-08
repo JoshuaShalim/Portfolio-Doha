@@ -11,11 +11,18 @@ Portfolio for a Doha-based IT support and systems professional with development 
 - React, Next.js, React Native, Node.js, Express, and databases
 - Clear troubleshooting, documentation, testing, and user support
 
-## Recent learning and achievements
+## Credentials and professional training
 
-- Completed LinkedIn Learning preparation coursework for **CompTIA A+ Core 1 (220-1201)** in October 2026. This is exam preparation coursework, not a CompTIA certification.
-- Completed a practical **AnyDesk remote-access and file-transfer lab** across two computers.
-- Continuing **PC Hardware Technician** coursework through BYU-Pathway Worldwide / Ensign College.
+Verified Cisco Networking Academy credentials:
+
+- **Network Support and Security** — issued October 5, 2026
+- **Networking Devices and Initial Configuration** — issued September 22, 2026
+- **Network Addressing and Basic Troubleshooting** — issued September 14, 2026
+- **Networking Basics** — issued September 8, 2026
+
+Verification: https://www.credly.com/users/joshua-shalim/badges
+
+Currently completing LinkedIn Learning preparation for **CompTIA A+ Core 1 (220-1201)** and **Core 2 (220-1202)**, with completion expected in October 2026. These are exam-preparation courses and are not presented as CompTIA certification.
 
 ## Featured evidence
 
