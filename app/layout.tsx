@@ -7,11 +7,11 @@ const sans = Space_Grotesk({ subsets: ["latin"], variable: "--font-sans", displa
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://joshuashalimportfolio.vercel.app"),
-  title: { default: "Joshua Shalim — Full-Stack E-Commerce Developer", template: "%s — Joshua Shalim" },
-  description: "Doha-based full-stack developer building e-commerce products, web and mobile applications, Node.js integrations, workflow automation, and source-grounded AI systems.",
+  title: { default: "Joshua Shalim — IT Support & Full-Stack Systems", template: "%s — Joshua Shalim" },
+  description: "Doha-based IT support and systems professional with full-stack development, e-commerce operations, mobile, backend integration, and practical troubleshooting experience.",
   openGraph: {
-    title: "Joshua Shalim — Full-Stack E-Commerce Developer",
-    description: "Verified e-commerce, web, mobile, systems integration, and AI engineering case studies.",
+    title: "Joshua Shalim — IT Support & Full-Stack Systems",
+    description: "IT support, systems integration, e-commerce, web, mobile, and backend project evidence.",
     url: "https://joshuashalimportfolio.vercel.app",
     siteName: "Joshua Shalim Portfolio",
     type: "website"
