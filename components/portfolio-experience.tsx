@@ -54,7 +54,7 @@ export function PortfolioExperience() {
           <div className="section-label reveal">About</div>
           <div className="section-heading reveal">
             <h2>Support mindset.<br /><span>Builder capability.</span></h2>
-            <p>I combine patient troubleshooting with practical development experience. I can help a user, investigate the underlying workflow, document the issue clearly, and build or integrate a lasting solution when needed.</p>
+            <p>I combine IT support, digital operations and software development experience with Instagram and Facebook marketing, including work with Meta Pixel. I help users, maintain business information, coordinate e-commerce workflows and document issues clearly.</p>
           </div>
           <div className="about-grid">
             <article className="about-card reveal"><span>01</span><h3>Troubleshoot clearly</h3><p>I reproduce issues, isolate likely causes, communicate with users, document findings, and verify that a fix works in the real workflow.</p></article>
@@ -117,6 +117,7 @@ export function PortfolioExperience() {
             <div><h3>Backend & data</h3>{skills.filter((skill) => ["Node.js","Express","REST APIs","PostgreSQL","MySQL","MongoDB","Supabase"].includes(skill)).map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Commerce & integrations</h3>{["Shopify","Shopify GraphQL","Webhooks","REST APIs","Shopify CLI"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>IT support</h3>{["Hardware troubleshooting","Remote support","Networking fundamentals","Windows"].map((skill) => <span key={skill}>{skill}</span>)}</div>
+            <div><h3>Social media marketing</h3>{["Instagram marketing","Facebook marketing","Meta Pixel"].map((skill) => <span key={skill}>{skill}</span>)}</div>
             <div><h3>Infrastructure</h3>{["Git","Linux","VPS deployment","PM2","Vercel"].map((skill) => <span key={skill}>{skill}</span>)}</div>
           </div>
         </section>
@@ -142,7 +143,7 @@ export function PortfolioExperience() {
           </div>
         </section>
       </main>
-      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a><p>IT support · Systems · Full-stack development</p><p>© 2026 Joshua Shalim</p></footer>
+      <footer className="site-footer section-shell"><a className="brand" href="#home"><span>J</span><b>Joshua Shalim</b></a><p>IT support · Digital operations · E-commerce · Social media</p><p>© 2026 Joshua Shalim</p></footer>
     </>
   );
 }
