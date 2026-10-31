@@ -2,9 +2,9 @@ export function HeroStage() {
   return (
     <section id="home" className="hero section-shell">
       <div className="hero-aura" aria-hidden="true" />
-      <div className="availability reveal"><span /> Doha-based · Open to IT support and technical roles</div>
-      <h1 className="reveal">IT Support & Systems<br /><span>with development depth.</span></h1>
-      <p className="hero-copy reveal delay-1">I&apos;m Joshua Shalim. I troubleshoot user and system issues, support e-commerce operations, and build web, mobile, and backend solutions when the problem needs code.</p>
+      <div className="availability reveal"><span /> Doha-based · Open to IT support and digital operations roles</div>
+      <h1 className="reveal">IT Support & Digital Operations<br /><span>E-commerce & Social Media.</span></h1>
+      <p className="hero-copy reveal delay-1">I&apos;m Joshua Shalim. I support users and business systems, coordinate e-commerce operations, and bring hands-on Instagram and Facebook marketing experience, including work with Meta Pixel. My software development background helps me solve technical and operational problems.</p>
       <div className="hero-actions reveal delay-2">
         <a className="button button-primary" href="#work">View selected work <span>↘</span></a>
         <a className="button button-secondary" href="#achievements">Recent achievements <span>→</span></a>
